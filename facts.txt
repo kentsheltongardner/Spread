@@ -1,0 +1,43 @@
+Definitions
+
+A cell has even parity if the sum of its x and y positions is even, otherwise it has odd parity
+
+A collapsed number can spread into as many cells as any of its factors
+    For example, 24 can spread into 1, 2, 3, 4, 6, 8, 12, or 24 cells
+    19, which is prime, can spread into 1 or 19 cells
+    1 cannot spread
+
+
+
+In a contiguous group of the same number
+    The number of even and odd cells cannot differ by more than 1 for the group to merge
+
+As long as it is able to move, an even number can move anywhere.
+    If there is space, any puzzle beginning with only even numbers can be solved
+
+Any odd number will favor odd or even cells when it spreads
+    If it divides into even numbers, splitting them will double the 
+
+Only odd numbers suffer from 
+
+
+Changing between parity classes?
+
+What happens with zero? Negative numbers? Infinity
+
+
+Zero
+
+If zero is included, it can be spread or gathered arbitrarily. The value is not stable
+
+
+Infinity
+
+Like zero, infinity can be spread or gathered arbitrarily. The value is not stable
+
+
+Negative numbers
+
+Negative numbers would operate with themselves just like positive numbers operate with themselves
+    Under the current rules of the game there is no mechanism for combining them
+    Perhaps negative and positive numbers could annihilate?
