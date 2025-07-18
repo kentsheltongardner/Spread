@@ -5,21 +5,6 @@ import Rectangle from './rectangle.js'
 const levelData = [
     {
         grid: [
-            '2 2 2',
-            '0 2 0',
-        ],
-        goal: new Point(1, 0)
-    },
-    {
-        grid: [
-            '3 4 5',
-            '0 0 0',
-            '0 0 0',
-        ],
-        goal: new Point(0, 1)
-    },
-    {
-        grid: [
             '1 1',
         ],
         goal: new Point(1, 0)
@@ -118,7 +103,14 @@ const levelData = [
         ],
         goal: new Point(0, 2)
     },
-
+    {
+        grid: [
+            '0 3 0',
+            '0 0 0',
+            '0 2 0',
+        ],
+        goal: new Point(0, 1)
+    },
 ]
 
 export default class Game {
