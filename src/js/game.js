@@ -4,7 +4,7 @@ import Rectangle from './rectangle.js';
 const levelData = [
     {
         grid: [
-            '1 1',
+            '2 0',
         ],
         goal: new Point(1, 0)
     },
@@ -20,7 +20,7 @@ const levelData = [
     {
         grid: [
             '0 1 1',
-            '0 0 1',
+            '0 W 1',
         ],
         goal: new Point(0, 1)
     },
@@ -104,11 +104,27 @@ const levelData = [
     },
     {
         grid: [
-            '0 3 0',
+            '3 5 4',
             '0 0 0',
-            '0 2 0',
+            '0 W 0',
         ],
-        goal: new Point(0, 1)
+        goal: new Point(1, 1)
+    },
+    {
+        grid: [
+            '0 7 0',
+            '0 5 0',
+            '0 0 W',
+        ],
+        goal: new Point(1, 1)
+    },
+    {
+        grid: [
+            '0 18 0',
+            '0 10 0',
+            '0 0 W',
+        ],
+        goal: new Point(1, 1)
     },
 ];
 export default class Game {
@@ -119,24 +135,6 @@ export default class Game {
     canvas = document.getElementById('game-canvas');
     context = this.canvas.getContext('2d');
     constructor() {
-        const grid = [
-            [1, Level.Wall, 1, 2],
-            [3, 1, 1, Level.Wall],
-            [1, 1, 0, 0],
-            [1, 1, 3, Level.Wall]
-        ];
-        const grid2 = [
-            [0, Level.Wall, 0, 3],
-            [3, 0, 0, Level.Wall],
-            [0, 0, 2, 0],
-            [Level.Wall, 3, 0, Level.Wall]
-        ];
-        const grid3 = [
-            [0, Level.Wall, 3, 0, Level.Wall],
-            [3, 0, 0, Level.Wall, 5],
-            [0, 0, 2, 0, 3],
-            [Level.Wall, 3, 0, Level.Wall, 1]
-        ];
         window.addEventListener('mousedown', e => { this.mouseDown(e); });
         window.addEventListener('mousemove', e => { this.mouseMove(e); });
         window.addEventListener('mouseup', e => { this.mouseUp(e); });
@@ -196,6 +194,11 @@ export default class Game {
         }
         else if (e.key === 'n') {
             this.levelNumber = Math.min(levelData.length - 1, this.levelNumber + 1);
+            this.loadLevelData();
+            this.render();
+        }
+        else if (e.key === 'l') {
+            this.levelNumber = levelData.length - 1;
             this.loadLevelData();
             this.render();
         }
